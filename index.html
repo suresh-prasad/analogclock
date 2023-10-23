@@ -1,93 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Calculator</title>
-<style>
-  body {
-    background-color: purple;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-  }
-
-  .calculator {
-    max-width: 300px;
-    margin: 50px auto;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 100px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  input, button {
-    font-size: 10px;
-    padding: 5px 1px;
-    margin: 5px;
-    width: 45px;
-    border-radius: 100px;
-  }
-
-  input {
-    width: 50%;
-  }
-
-  button {
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #777;
-    trans    ;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Analog Clock</title>
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" id="result" readonly>
-    <br>
-    <button onclick="appendNumber('1')">1</button>
-    <button onclick="appendNumber('2')">2</button>
-    <button onclick="appendNumber('3')">3</button>
-    <button onclick="appendOperation('+')">+</button>
-    <br>
-    <button onclick="appendNumber('4')">4</button>
-    <button onclick="appendNumber('5')">5</button>
-    <button onclick="appendNumber('6')">6</button>
-    <button onclick="appendOperation('-')">-</button>
-    <br>
-    <button onclick="appendNumber('7')">7</button>
-    <button onclick="appendNumber('8')">8</button>
-    <button onclick="appendNumber('9')">9</button>
-    <button onclick="appendOperation('*')">*</button>
-    <br>
-    <button onclick="appendNumber('0')">0</button>
-    <button onclick="clearResult()">C</button>
-    <button onclick="calculateResult()">=</button>
-    <button onclick="appendOperation('/')">/</button>
-  </div>
+    <div class="container">
+        <div class="clock">
 
-  <script>
-    function appendNumber(num) {
-      document.getElementById('result').value += num;
-    }
+            <div style="--clr: #000000; --h:70px" id="hour" class="hand"><i></i></div>
+            <div style="--clr: #000000; --h:80px" id="min"  class="hand"><i></i></div>
+            <div style="--clr: #000000; --h:90px" id="sec"  class="hand"><i></i></div>
+           <span style="--i:1;"><b>1</b></span>
+           <span style="--i:2;"><b>2</b></span>
+           <span style="--i:3;"><b>3</b></span>
+           <span style="--i:4;"><b>4</b></span>
+           <span style="--i:5;"><b>5</b></span>
+           <span style="--i:6;"><b>6</b></span>
+           <span style="--i:7;"><b>7</b></span>
+           <span style="--i:8;"><b>8</b></span>
+           <span style="--i:9;"><b>9</b></span>
+           <span style="--i:10;"><b>10</b></span>
+           <span style="--i:11;"><b>11</b></span>
+           <span style="--i:12;"><b>12</b></span>
 
-    function appendOperation(op) {
-      document.getElementById('result').value += op;
-    }
+        </div>
+    </div>
 
-    function clearResult() {
-      document.getElementById('result').value = '';
-    }
-
-    function calculateResult() {
-      var result = eval(document.getElementById('result').value);
-      document.getElementById('result').value = result;
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
